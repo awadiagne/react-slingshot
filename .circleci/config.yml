@@ -8,24 +8,24 @@ jobs:
   build:
     <<: *defaults
     steps:
+      - checkout
       - run:
-        - checkout
-        command : npm run lint
+          command : npm run lint
 
   test:
     <<: *defaults
     steps:
+      - checkout
       - run:
-        - checkout
-        command : npm run test
+          command : npm run test
 
 
   analyse:
     <<: *defaults
     steps:
+      - checkout
       - run:
-        - checkout
-        command : npm audit
+          command : npm audit
 
 workflows:
   jobs:
