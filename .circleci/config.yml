@@ -28,9 +28,12 @@ jobs:
           command : npm audit
 
 workflows:
-  jobs:
-    - build
-    - test:
-        requires: build
-    - analyse:
-        requires: test
+  Ci_workflow:
+    jobs:
+      - build
+      - test:
+          requires: 
+            - build
+      - analyse:
+          requires: 
+            - test
